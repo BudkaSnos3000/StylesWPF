@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Password">pack://application:,,,/Fonts/password.ttf #Password</FontFamily>
+    <FontFamily x:Key="Onest">pack://application:,,,/Fonts/OnestRegular1602-hint.ttf #Onest</FontFamily>
+    <FontFamily x:Key="Roboto-Regular">pack://application:,,,/Fonts/Roboto-Regular.ttf #Roboto-Regular</FontFamily>
+    <FontFamily x:Key="Roboto-Medium">pack://application:,,,/Fonts/Roboto-Medium.ttf #Roboto-Medium</FontFamily>
+    <FontFamily x:Key="Roboto-Bold">pack://application:,,,/Fonts/Roboto-Bold.ttf #Roboto-Bold</FontFamily>
+    
+</ResourceDictionary>

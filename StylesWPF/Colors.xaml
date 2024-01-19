@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <SolidColorBrush x:Key="MainBlue" Color="#68B8DD"/>
+    <Color x:Key="ColorMainBlue">#68B8DD</Color>
+    <SolidColorBrush x:Key="MainBluePointerOver" Color="#97D5F1"/>
+    <Color x:Key="ColorMainBluePointerOver">#008DCE</Color>
+    <SolidColorBrush x:Key="MainBluePressed" Color="#008DCE"/>
+    <SolidColorBrush x:Key="Border" Color="#A0A0A0"/>
+    
+    <SolidColorBrush x:Key="BorderPointerOver" Color="#000000"/>
+    <SolidColorBrush x:Key="TextEnter" Color="#000000"/>
+    <SolidColorBrush x:Key="Background" Color="#00AAAAAA"/>
+
+
+</ResourceDictionary>
