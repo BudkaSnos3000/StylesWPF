@@ -10,9 +10,9 @@
              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
              d:DesignHeight="302" d:DesignWidth="276">
 
-    <!--<UserControl.DataContext>
+    <UserControl.DataContext>
         <local:VMCalendar/>
-    </UserControl.DataContext>-->
+    </UserControl.DataContext>
         
     <UserControl.Resources>
 

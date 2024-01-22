@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace StylesWPF
 {
-    //public class VMCalendar : ViewModelBase
-    //{
-    //    public DateTime? SelectedDate { get => Get<DateTime?>(); set => Set(value); }
-    //}
+    public class VMCalendar : BaseInpc
+    {
+        private DateTime? _selectedDate;
+        public DateTime? SelectedDate { get => _selectedDate; set => Set(ref _selectedDate, value); }
+    }
 }

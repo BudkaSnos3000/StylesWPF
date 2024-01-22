@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Fonts\OnestRegular1602-hint.ttf" />
     <Resource Include="Fonts\password.ttf" />
     <Resource Include="Fonts\Roboto-Bold.ttf" />
