@@ -428,4 +428,197 @@
         </Setter>
     </Style>
 
+
+    <Style x:Key="SmallSearchButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0.69"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainBlue}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Path VerticalAlignment="Center" HorizontalAlignment="Center" Data="M13.8423 13.0808L9.55155 8.78985C10.3119 7.86127 10.7693 6.67558 10.7693 5.38462C10.7693 2.41554 8.35373 0 5.38464 0C2.41555 0 0 2.41554 0 5.38462C0 8.35369 2.41555 10.7692 5.38464 10.7692C6.67561 10.7692 7.86131 10.3118 8.78989 9.5515L13.0809 13.8425C13.1862 13.9475 13.3238 14 13.4616 14C13.5995 14 13.737 13.9475 13.8423 13.8422C14.0526 13.632 14.0526 13.2911 13.8423 13.0808ZM1.07693 5.38462C1.07693 3.00946 3.00948 1.07692 5.38464 1.07692C7.75981 1.07692 9.69235 3.00946 9.69235 5.38462C9.69235 7.75977 7.75981 9.69231 5.38464 9.69231C3.00948 9.69231 1.07693 7.75977 1.07693 5.38462Z" Fill="{DynamicResource MainBlue}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                                CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}"
+                                ScaleX="1.15" ScaleY="1.15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                                CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}" 
+                                ScaleX="0.85" ScaleY="0.85"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SmallPenButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0.69"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainBlue}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Path VerticalAlignment="Center" HorizontalAlignment="Center" Data="M12.9803 1.70781C12.9053 1.18347 12.6268 0.719061 12.1957 0.400047C12.0087 0.261615 11.8012 0.15721 11.5787 0.0891538C11.3641 0.0238043 11.1408 -0.00597021 10.9156 0.000990084C10.8383 0.00331018 10.7614 0.00988417 10.6864 0.0207113C10.157 0.0953411 9.68723 0.367952 9.36377 0.78789L8.49436 1.91739L8.43361 2.00014L0.525697 12.2701L0.509129 12.2909L0.0113097 15.1249C-0.0376045 15.4018 0.0744244 15.6794 0.303216 15.8488C0.435363 15.9462 0.598278 16 0.762772 16C0.778156 16 0.793541 15.9996 0.80932 15.9985C0.907937 15.9927 1.0034 15.9679 1.09334 15.9258L3.71458 14.6903L3.73707 14.6791L12.0383 3.89953L12.103 3.81098L12.5913 3.17604C12.9167 2.75379 13.0548 2.23215 12.9803 1.70781ZM0.723325 15.3036L1.19629 12.6103L3.23412 14.1199L0.723325 15.3036ZM3.68539 13.5542L1.62824 12.0299L9.01703 2.43477L11.0781 3.95405L3.68539 13.5542ZM12.0067 2.74373L11.5184 3.37789L9.45686 1.85862L9.94837 1.22059C10.1547 0.952617 10.4541 0.778997 10.791 0.731435C10.8407 0.724088 10.8904 0.719834 10.9389 0.718674C11.0825 0.714033 11.2245 0.733368 11.3614 0.774743C11.503 0.818052 11.6351 0.884948 11.7542 0.973112C12.0292 1.17651 12.2071 1.47271 12.2548 1.80719C12.3022 2.14167 12.2142 2.47421 12.0067 2.74373Z" Fill="{DynamicResource MainBlue}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                            CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}"
+                            ScaleX="1.15" ScaleY="1.15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                            CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}" 
+                            ScaleX="0.85" ScaleY="0.85"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="SmallTrashButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0.69"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainBlue}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Path Data="M1.13801 3.40393L2.07726 13.2736C2.12055 13.7466 2.3398 14.1863 2.69179 14.5059C3.04377 14.8255 3.50292 15.0018 3.97869 15H10.0272C10.503 15.0018 10.9621 14.8255 11.3141 14.5059C11.6661 14.1863 11.8853 13.7466 11.9286 13.2736L12.8679 3.40393H13.6239C13.7242 3.40237 13.8198 3.36151 13.8902 3.29016C13.9606 3.21881 14 3.12269 14 3.02256C14 2.92243 13.9606 2.82632 13.8902 2.75497C13.8198 2.68362 13.7242 2.64276 13.6239 2.64122H10.0746L9.72828 0.918536C9.67543 0.659752 9.53481 0.427081 9.33013 0.259761C9.12545 0.0924398 8.86924 0.000706459 8.6047 3.05176e-05H5.40118C5.13661 0.000718257 4.88037 0.0924875 4.67569 0.259858C4.47101 0.427229 4.33042 0.659957 4.27762 0.918785L3.93135 2.64122H0.381979C0.280672 2.64122 0.183514 2.68139 0.111879 2.75291C0.040244 2.82443 0 2.92143 0 3.02257C0 3.12371 0.040244 3.22071 0.111879 3.29223C0.183514 3.36375 0.280672 3.40393 0.381979 3.40393H1.13801ZM11.1682 13.2014C11.1422 13.4852 11.0106 13.749 10.7994 13.9408C10.5882 14.1325 10.3127 14.2383 10.0272 14.2373H3.97869C3.69321 14.2383 3.4177 14.1325 3.20649 13.9408C2.99528 13.749 2.86371 13.4852 2.83773 13.2014L1.90536 3.40393C3.629 3.40348 10.5169 3.40425 12.1005 3.40393L11.1682 13.2014ZM5.02665 1.06924C5.0442 0.982918 5.09104 0.905282 5.15927 0.849442C5.22751 0.793602 5.31295 0.762978 5.40118 0.762742H8.6047C8.69289 0.762974 8.77831 0.793565 8.84653 0.849354C8.91476 0.905144 8.96162 0.982719 8.97922 1.06899L9.29532 2.64122H4.71059L5.02665 1.06924Z" Fill="{DynamicResource MainBlue}"/>
+                            <Path Data="M6.69838 5.2756C6.59708 5.27561 6.49992 5.31579 6.42829 5.38731C6.35666 5.45882 6.31641 5.55582 6.31641 5.65696V10.7417C6.31641 10.8428 6.35665 10.9398 6.42829 11.0114C6.49992 11.0829 6.59708 11.1231 6.69838 11.1231C6.79969 11.1231 6.89685 11.0829 6.96848 11.0114C7.04012 10.9398 7.08036 10.8428 7.08036 10.7417V5.65696C7.08036 5.55582 7.04011 5.45882 6.96848 5.38731C6.89685 5.31579 6.79969 5.27561 6.69838 5.2756Z" Fill="{DynamicResource MainBlue}"/>
+                            <Path Data="M4.40737 5.2756C4.30606 5.27561 4.20891 5.31579 4.13728 5.38731C4.06564 5.45882 4.0254 5.55582 4.02539 5.65696V10.7417C4.02539 10.8428 4.06563 10.9398 4.13727 11.0114C4.2089 11.0829 4.30606 11.1231 4.40737 11.1231C4.50868 11.1231 4.60583 11.0829 4.67747 11.0114C4.7491 10.9398 4.78935 10.8428 4.78935 10.7417V5.65696C4.78934 5.55582 4.7491 5.45882 4.67746 5.38731C4.60583 5.31579 4.50867 5.27561 4.40737 5.2756Z" Fill="{DynamicResource MainBlue}"/>
+                            <Path Data="M8.99135 5.2756C8.89005 5.27561 8.79289 5.31579 8.72126 5.38731C8.64963 5.45882 8.60938 5.55582 8.60938 5.65696V10.7417C8.60938 10.8428 8.64962 10.9398 8.72125 11.0114C8.79289 11.0829 8.89005 11.1231 8.99135 11.1231C9.09266 11.1231 9.18982 11.0829 9.26145 11.0114C9.33309 10.9398 9.37333 10.8428 9.37333 10.7417V5.65696C9.37333 5.55582 9.33308 5.45882 9.26145 5.38731C9.18981 5.31579 9.09266 5.27561 8.99135 5.2756Z" Fill="{DynamicResource MainBlue}"/>
+                        </Grid>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                        CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}"
+                        ScaleX="1.15" ScaleY="1.15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                        CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}" 
+                        ScaleX="0.85" ScaleY="0.85"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PlusAddButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Height" Value="auto"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource MainBlue}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Border VerticalAlignment="Center" HorizontalAlignment="Left" Height="12" Width="1" Margin="5.5,0,0,0" Background="{StaticResource MainBlue}"/>
+                            <Border VerticalAlignment="Center" HorizontalAlignment="Left" Height="1" Width="12" Background="{StaticResource MainBlue}"/>
+                            <TextBlock Margin="18,0,0,0" Text="добавить" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="10" FontFamily="{StaticResource Roboto-Regular}"/>
+                        </Grid>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                    CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}"
+                    ScaleX="1.15" ScaleY="1.15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="RenderTransform" TargetName="border">
+                                <Setter.Value>
+                                    <ScaleTransform CenterX="{Binding ActualWidth, ElementName=border, Converter={StaticResource CenterConverter}}"
+                    CenterY="{Binding ActualHeight, ElementName=border, Converter={StaticResource CenterConverter}}" 
+                    ScaleX="0.85" ScaleY="0.85"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

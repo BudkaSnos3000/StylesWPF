@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,15 @@ namespace StylesWPF
     /// </summary>
     public partial class UserControlCalendar : UserControl
     {
+        public ObservableCollection<string> WeekDays { get; set; }
         public UserControlCalendar()
         {
             InitializeComponent();
             Loaded += UserControl_Loaded;
+
             System.Windows.Controls.Calendar wpfCalendar = FindName("MyCalendar") as System.Windows.Controls.Calendar;
             wpfCalendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
+            WeekDays = new ObservableCollection<string> { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
         }
 
         private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)

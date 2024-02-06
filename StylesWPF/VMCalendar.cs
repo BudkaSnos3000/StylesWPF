@@ -12,3 +12,4 @@ namespace StylesWPF
         public DateTime? SelectedDate { get => _selectedDate; set => Set(ref _selectedDate, value); }
     }
 }
+

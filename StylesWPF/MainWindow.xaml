@@ -10,19 +10,23 @@
         Title="MainWindow" Height="450" Width="800"
         xmlns:wpfToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
-        DataContext="{DynamicResource vm}">
-
-
-
+        >
     <Window.Resources>
-        <local:VMCalendar x:Key="vm"/>
+
+
     </Window.Resources>
+    
+
+
+
+    <!--<Window.Resources>
+        <local:VMCalendar x:Key="vm"/>
+    </Window.Resources>-->
 
 
     <Grid >
 
-        <local:UserControlCalendar x:Name="MyCalendar"/>
-        <TextBox x:Name="myTextBox" VerticalAlignment="Top" HorizontalAlignment="Right" Height="50" Width="100" Background="Aqua"
-                 Text="{Binding SelectedDate}"/>
+        <local:UserControlCalendar/>
+
     </Grid>
 </Window>

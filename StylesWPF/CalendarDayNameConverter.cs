@@ -1,40 +1,26 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows.Markup;
-using System.Windows;
 
 namespace StylesWPF
 {
-    public class CalendarDayNameConverter : IMultiValueConverter
+    public class CalendarDayNameConverter : IValueConverter
     {
-        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            if (values?.Length > 0 && values[0] is int index)
-            {
-                var dayNames = culture?.DateTimeFormat?.AbbreviatedDayNames;
-                if (dayNames?.Length > 0)
-                {
-                    var firstDayOfWeek = values.Length > 1 && values[1] is DayOfWeek d ? d : culture.DateTimeFormat.FirstDayOfWeek;
-                    var dayName = dayNames[(index + (int)firstDayOfWeek) % dayNames.Length];
+            var daynames = CultureInfo.CurrentCulture.DateTimeFormat.DayNames;
+            string dayname = value.ToString();
 
-                    // Сделать первую букву заглавной
-                    return char.ToUpper(dayName[0]) + dayName.Substring(1);
-                }
-            }
-
-            return DependencyProperty.UnsetValue;
+            return daynames.First(t => t.StartsWith(dayname)).Substring(0, 2);
         }
 
-
-        public object[]? ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) => null;
-
-        public CalendarDayNameConverter()
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            //Это нужно для установки культуры. 
-            FrameworkElement.LanguageProperty.OverrideMetadata(
-                typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(
-                        XmlLanguage.GetLanguage("ru-RU")));
+            throw new NotImplementedException();
         }
     }
 }

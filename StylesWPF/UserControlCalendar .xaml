@@ -10,12 +10,12 @@
              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
              d:DesignHeight="302" d:DesignWidth="276">
 
-    <UserControl.DataContext>
-        <local:VMCalendar/>
-    </UserControl.DataContext>
+
         
     <UserControl.Resources>
-
+        <local:CalendarDayNameConverter x:Key="CalendarDayNameConverter" />
+        
+        
         <!--#region календарь-->
         <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
             <Setter Property="Foreground" Value="Black"/>
@@ -148,6 +148,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Template">
                 <Setter.Value>
+
                     <ControlTemplate TargetType="{x:Type CalendarDayButton}">
                         <Grid>
                             <VisualStateManager.VisualStateGroups>
@@ -261,6 +262,9 @@
             </Setter>
         </Style>
 
+        
+        
+        
         <Style x:Key="CalendarCalendarItemStyle1" TargetType="{x:Type CalendarItem}">
             <Setter Property="Margin" Value="0"/>
             <Setter Property="Template">
@@ -268,18 +272,7 @@
                     <ControlTemplate TargetType="{x:Type CalendarItem}">
                         <ControlTemplate.Resources>
                             <DataTemplate x:Key="{x:Static CalendarItem.DayTitleTemplateResourceKey}">
-                                <TextBlock Foreground="#767676" FontFamily="{StaticResource Roboto-Regular}" FontSize="10" HorizontalAlignment="Center" Margin="0,6,0,6" VerticalAlignment="Center">
-                                    <TextBlock.Text>
-                                        <MultiBinding>
-                                            <MultiBinding.Converter>
-                                                <!--ссылка на конвертер-->
-                                                <local:CalendarDayNameConverter/>
-                                            </MultiBinding.Converter>
-                                            <Binding Path="(Grid.Column)" RelativeSource="{RelativeSource Self}" Mode="OneWay"/>
-                                            <Binding Path="FirstDayOfWeek" RelativeSource="{RelativeSource AncestorType={x:Type Calendar}}" Mode="OneWay"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
+                                <TextBlock Foreground="{StaticResource Border}" FontFamily="{StaticResource Roboto-Bold}" FontSize="12" HorizontalAlignment="Center" Margin="0,6,0,6" Text="{Binding DayOfWeek, Converter={StaticResource CalendarDayNameConverter}}" VerticalAlignment="Center"/>
                             </DataTemplate>
                         </ControlTemplate.Resources>
                         <Grid Width="270" Height="296" x:Name="PART_Root">
@@ -524,6 +517,8 @@
         </Style>
         <!--#endregion-->
 
+        
+        
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
