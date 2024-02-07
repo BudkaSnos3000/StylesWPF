@@ -27,10 +27,8 @@ namespace StylesWPF
         {
             InitializeComponent();
             Loaded += UserControl_Loaded;
-
             System.Windows.Controls.Calendar wpfCalendar = FindName("MyCalendar") as System.Windows.Controls.Calendar;
             wpfCalendar.SelectedDatesChanged += Calendar_SelectedDatesChanged;
-            WeekDays = new ObservableCollection<string> { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
         }
 
         private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
