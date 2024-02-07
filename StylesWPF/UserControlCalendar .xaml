@@ -13,7 +13,7 @@
 
         
     <UserControl.Resources>
-        <local:CalendarDayNameConverter x:Key="CalendarDayNameConverter" />
+        <local:CalendarDayNameConverter x:Key="CalendarDayNameConverter"/>
         
         
         <!--#region календарь-->
@@ -272,7 +272,14 @@
                     <ControlTemplate TargetType="{x:Type CalendarItem}">
                         <ControlTemplate.Resources>
                             <DataTemplate x:Key="{x:Static CalendarItem.DayTitleTemplateResourceKey}">
-                                <TextBlock Foreground="{StaticResource Border}" FontFamily="{StaticResource Roboto-Bold}" FontSize="12" HorizontalAlignment="Center" Margin="0,6,0,6" Text="{Binding DayOfWeek, Converter={StaticResource CalendarDayNameConverter}}" VerticalAlignment="Center"/>
+                                <TextBlock Foreground="{StaticResource Border}" FontFamily="{StaticResource Roboto-Regular}" FontSize="11" HorizontalAlignment="Center" Margin="0,6,0,6" VerticalAlignment="Center">
+                                    <TextBlock.Text>
+                                        <MultiBinding Converter="{StaticResource CalendarDayNameConverter}">
+                                            <Binding Path="(Grid.Column)" RelativeSource="{RelativeSource Self}" Mode="OneWay"/>
+                                            <Binding Path="FirstDayOfWeek" RelativeSource="{RelativeSource AncestorType={x:Type Calendar}}" Mode="OneWay"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
                             </DataTemplate>
                         </ControlTemplate.Resources>
                         <Grid Width="270" Height="296" x:Name="PART_Root">

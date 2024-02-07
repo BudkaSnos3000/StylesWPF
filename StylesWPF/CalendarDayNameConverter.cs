@@ -4,23 +4,31 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 
 namespace StylesWPF
 {
-    public class CalendarDayNameConverter : IValueConverter
+    public class CalendarDayNameConverter : IMultiValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            var daynames = CultureInfo.CurrentCulture.DateTimeFormat.DayNames;
-            string dayname = value.ToString();
+            if (values?.Length > 0 && values[0] is int index)
+            {
+                CultureInfo systemCulture = CultureInfo.CurrentCulture;
+                var dayNames = systemCulture?.DateTimeFormat?.AbbreviatedDayNames;
+                if (dayNames?.Length > 0)
+                {
+                    var firstDayOfWeek = values.Length > 1 && values[1] is DayOfWeek d ? d : systemCulture.DateTimeFormat.FirstDayOfWeek;
+                    var day = dayNames[(index + (int)firstDayOfWeek) % dayNames.Length].ToString();
+                    return day = char.ToUpper(day[0]) + day.Substring(1);
+                }
+            }
 
-            return daynames.First(t => t.StartsWith(dayname)).Substring(0, 2);
+            return DependencyProperty.UnsetValue;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) =>
+            null;
     }
 }
