@@ -25,6 +25,7 @@
         <Viewbox Margin="20" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200">
             <local:UserControlCalendar/>
         </Viewbox>
+        
         <TextBox Text="{Binding SelectedDate}" Height="20" Background="Aqua" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left"></TextBox>
         <TextBox Text="{Binding SelectedDate}" Height="20" Background="Aqua" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right"></TextBox>
     </Grid>
